@@ -20,6 +20,7 @@ h2
         text-align: left
     
     .poster
+        text-align: center
         width: 300px
 
     button 
@@ -28,6 +29,21 @@ h2
     .genres
         font-style: italic
         padding: 10px 0
-    
-    .poster
-        text-align: center
+
+
+@media only screen and (max-width: 800px)
+    .show
+        .detailbox
+            display: inline-block
+        
+        .poster
+            width: 60%
+
+        .col
+            width: 90%
+
+
+@media only screen and (max-width: 600px)
+    .show 
+        .poster
+            width: 90%
