@@ -10,7 +10,7 @@
             <h2 class="title is-2">{{ getTitle() }}</h2>
             <div [innerHTML]="getDescrition()"></div>
             <div class="genres">{{ getGenres() }}</div>
-            <div class="rating">{{ getRating() }}</div>
+            <app-star-rating [rating]="getRating()" [ratingStars]="getRatingStars()"></app-star-rating>
         </div>
     </div>
 </div>

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoResultsComponent } from '../no-results/no-results.component';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { ShowListComponent } from '../show-list/show-list.component';
 
@@ -13,7 +14,8 @@ describe('HomeComponent', () => {
       declarations: [
         HomeComponent,
         SearchBarComponent,
-        ShowListComponent
+        ShowListComponent,
+        NoResultsComponent
       ]
     })
     .compileComponents();

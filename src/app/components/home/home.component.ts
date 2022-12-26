@@ -10,6 +10,7 @@ import { DataService } from '../../services/data.service';
 
 export class HomeComponent {
   showItems = [];
+  isSearchEmpty = false;
   
   constructor(
     private tvmaze: TvmazeService,
@@ -24,6 +25,7 @@ export class HomeComponent {
   onTerm(term:string) {
     this.tvmaze.search(term).subscribe((response: any) => {
       this._data.updateShowItems(response);
+      this.isSearchEmpty = this.showItems.length === 0;
     })
   }
 }

@@ -53,6 +53,14 @@ export class ShowDetailComponent {
     return this.selectedShow.show.rating.average;
   }
 
+  getRatingStars(){
+    const rating = this.getRating();
+    if (rating)  {
+      return `width: ${ 20 * rating }px`;
+    }
+    return 'width: 0px';
+  }
+
   sendMeHome() {
     this._data.updateShowItems([]); // reset the list to not show previous search
     this.router.navigate(['']);

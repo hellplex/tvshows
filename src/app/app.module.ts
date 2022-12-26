@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ShowListComponent } from './components/show-list/show-list.component';
 import { ShowDetailComponent } from './components/show-detail/show-detail.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { NoResultsComponent } from './components/no-results/no-results.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ShowDetailComponent } from './components/show-detail/show-detail.compon
     HomeComponent,
     SearchBarComponent,
     ShowListComponent,
-    ShowDetailComponent
+    ShowDetailComponent,
+    StarRatingComponent,
+    NoResultsComponent
   ],
   imports: [
     BrowserModule,

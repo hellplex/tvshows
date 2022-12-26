@@ -1,3 +1,5 @@
 <app-search-bar (submitted)="onTerm($event)"></app-search-bar>
 
 <app-show-list *ngIf="showItems.length"></app-show-list>
+
+<app-no-results *ngIf="isSearchEmpty"></app-no-results>
