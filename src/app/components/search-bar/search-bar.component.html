@@ -1,0 +1,9 @@
+<div class="box">
+    <form (submit)="onFormSubmit($event)">
+        <input
+            placeholder="Introduce el nombre del show"
+            class="input"
+            (input)="term = $any($event.target).value" 
+        />
+    </form>
+</div>
