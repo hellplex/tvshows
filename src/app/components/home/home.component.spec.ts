@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
+import { ShowListComponent } from '../show-list/show-list.component';
 
 import { HomeComponent } from './home.component';
 
@@ -11,7 +12,8 @@ describe('HomeComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [
         HomeComponent,
-        SearchBarComponent 
+        SearchBarComponent,
+        ShowListComponent
       ]
     })
     .compileComponents();

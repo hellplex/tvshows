@@ -1,0 +1,11 @@
+<div class="showlist">
+    <div *ngFor="let show of showItems | slice:0:6" class="show">
+        <div>
+            <img
+                [src]="getImage(show)"
+            />
+        </div>
+        <div>{{ getName(show)  }}</div>
+        <div>{{ getRating(show) }}</div>
+    </div>
+</div>
