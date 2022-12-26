@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TvmazeService } from '../../services/tvmaze.service';
 
 @Component({
   selector: 'app-home',
@@ -6,12 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 
-export class HomeComponent {  
-  constructor() {}
+export class HomeComponent {
+  showItems = [];
+  
+  constructor(
+    private tvmaze: TvmazeService,
+  ) {}
 
   ngOnInit() {}
 
   onTerm(term:string) {
-    console.log('term...', term)
+    this.tvmaze.search(term).subscribe((response: any) => {
+      console.log('SHOWS...', response)
+    })
   }
 }
