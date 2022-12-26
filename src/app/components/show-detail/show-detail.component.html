@@ -1,0 +1,16 @@
+<div class="show">
+    <div class="backButton">
+        <button (click)="sendMeHome()" class="button">Volver a la búsqueda</button>
+    </div>
+    <div class="detailbox">
+        <div class="poster col">
+            <img [src]="getBigImage()"/>
+        </div>
+        <div class="details col">
+            <h2 class="title is-2">{{ getTitle() }}</h2>
+            <div [innerHTML]="getDescrition()"></div>
+            <div class="genres">{{ getGenres() }}</div>
+            <div class="rating">{{ getRating() }}</div>
+        </div>
+    </div>
+</div>

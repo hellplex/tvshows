@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { ShowListComponent } from './components/show-list/show-list.component';
+import { ShowDetailComponent } from './components/show-detail/show-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ShowListComponent } from './components/show-list/show-list.component';
     HeaderComponent,
     HomeComponent,
     SearchBarComponent,
-    ShowListComponent
+    ShowListComponent,
+    ShowDetailComponent
   ],
   imports: [
     BrowserModule,

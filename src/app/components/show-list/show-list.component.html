@@ -1,5 +1,5 @@
 <div class="showlist">
-    <div *ngFor="let show of showItems | slice:0:6" class="show">
+    <div *ngFor="let show of showItems | slice:0:6" class="show" [routerLink]="['detail/', show['show']['id']]">
         <div>
             <img
                 [src]="getImage(show)"
