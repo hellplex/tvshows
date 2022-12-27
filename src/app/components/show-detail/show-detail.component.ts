@@ -31,18 +31,20 @@ export class ShowDetailComponent {
   }
 
   getTitle() {
-    return this.selectedShow.show.name;
+    const title = this.selectedShow && this.selectedShow.show && this.selectedShow.show.name
+    return title;
   }
   getImage(){
-    const showImage = this.selectedShow.show.image;
+    const showImage = this.selectedShow && this.selectedShow.show && this.selectedShow.show.image;
     return showImage ? showImage.medium : 'assets/img/fallback.png';
   }
   getDescrition(){
-    return this.selectedShow.show.summary;
+    const description = this.selectedShow && this.selectedShow.show && this.selectedShow.summary
+    return description;
   }
   getGenres(){
-    const genresList = this.selectedShow.show.genres;
-    if(genresList.length) {
+    const genresList = this.selectedShow && this.selectedShow.show && this.selectedShow.show.genres;
+    if(genresList && genresList.length) {
       return genresList.join(', ');
     } else {
       return '[Sin género]'
@@ -50,9 +52,8 @@ export class ShowDetailComponent {
   }
 
   getRating(){
-    console.log('this.selectedShow.show.rating.average', this.selectedShow.show.rating.average);
-
-    return this.selectedShow.show.rating.average;
+    const rating = this.selectedShow && this.selectedShow.show && this.selectedShow.show.rating && this.selectedShow.show.rating.average
+    return rating ;
   }
 
   getRatingStars(){
