@@ -4,7 +4,7 @@
     display: grid
     grid-template-columns: 250px 250px 250px
     justify-content: center
-    margin-top: 20px
+    margin: 20px 0
     row-gap: 20px    
 
 .show
@@ -16,13 +16,23 @@
 .noresutls
     color: white
 
+.listposter
+    height: 300px
+    text-align: center
+
+.listname
+    font-size: 1.1em
+
+.listrating
+    font-size: .8em
+    color: #CCCCCC
+
 @media only screen and (max-width: 800px)
     .showlist
         grid-template-columns: 300px 300px
     
     .showlist
         width: 100%
-        text-align: center
     
     .show
         margin: 20px
@@ -32,3 +42,9 @@
 @media only screen and (max-width: 600px)
     .showlist
         display: inline-block
+        text-align: center
+    
+    .show
+        display: inline-block
+        margin: 20px
+        width: 300px

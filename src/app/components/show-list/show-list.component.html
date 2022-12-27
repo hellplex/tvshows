@@ -1,12 +1,12 @@
 <div class="showlist">
     <div *ngFor="let show of showItems | slice:0:6" class="show" [routerLink]="['detail/', show['show']['id']]">
-        <div>
+        <div class="listposter">
             <img
                 [src]="getImage(show)"
                 aria-label="Poster del show"
             />
         </div>
-        <div>{{ getName(show)  }}</div>
-        <div>{{ getRating(show) }}</div>
+        <div class="listname">{{ getName(show)  }}</div>
+        <div class="listrating">{{ getRating(show) }}</div>
     </div>
 </div>

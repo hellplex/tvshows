@@ -1,16 +1,20 @@
-<div class="show">
-    <div class="backButton">
-        <button (click)="sendMeHome()" class="button is-dark is-small">Volver a la búsqueda</button>
-    </div>
-    <div class="detailbox">
-        <div class="poster col">
-            <img [src]="getBigImage()" aria-label="Poster del show" />
+<div class="wrapshow">
+
+    <div class="show">
+        <div class="backButton">
+            <button (click)="sendMeHome()" class="button is-dark is-small">Volver a la búsqueda</button>
         </div>
-        <div class="details col">
-            <h2 class="title is-2">{{ getTitle() }}</h2>
-            <div [innerHTML]="getDescrition()"></div>
-            <div class="genres">{{ getGenres() }}</div>
-            <app-star-rating [rating]="getRating()" [ratingStars]="getRatingStars()"></app-star-rating>
+        <div class="detailbox">
+            <div class="poster col">
+                <img [src]="getImage()" aria-label="Poster del show" />
+            </div>
+            <div class="details col">
+                <h2 class="title is-2">{{ getTitle() }}</h2>
+                <div [innerHTML]="getDescrition()"></div>
+                <div class="genres">{{ getGenres() }}</div>
+                <app-star-rating *ngIf="getRating()" [rating]="getRating()" [ratingStars]="getRatingStars()"></app-star-rating>
+            </div>
         </div>
     </div>
+
 </div>

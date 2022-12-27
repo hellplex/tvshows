@@ -33,9 +33,9 @@ export class ShowDetailComponent {
   getTitle() {
     return this.selectedShow.show.name;
   }
-  getBigImage(){
+  getImage(){
     const showImage = this.selectedShow.show.image;
-    return showImage ? showImage.original : 'assets/img/fallback.png';
+    return showImage ? showImage.medium : 'assets/img/fallback.png';
   }
   getDescrition(){
     return this.selectedShow.show.summary;
@@ -45,11 +45,13 @@ export class ShowDetailComponent {
     if(genresList.length) {
       return genresList.join(', ');
     } else {
-      return '[no genres added yet]'
+      return '[Sin género]'
     }
   }
 
   getRating(){
+    console.log('this.selectedShow.show.rating.average', this.selectedShow.show.rating.average);
+
     return this.selectedShow.show.rating.average;
   }
 
