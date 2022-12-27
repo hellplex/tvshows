@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {HttpClientModule} from '@angular/common/http';
+
 import { NoResultsComponent } from '../no-results/no-results.component';
 import { SearchBarComponent } from '../search-bar/search-bar.component';
 import { ShowListComponent } from '../show-list/show-list.component';
@@ -16,7 +19,11 @@ describe('HomeComponent', () => {
         SearchBarComponent,
         ShowListComponent,
         NoResultsComponent
-      ]
+      ],
+      imports: [
+        HttpClientTestingModule,
+        HttpClientModule
+      ],
     })
     .compileComponents();
 
