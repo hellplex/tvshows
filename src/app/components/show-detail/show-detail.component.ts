@@ -39,7 +39,7 @@ export class ShowDetailComponent {
     return showImage ? showImage.medium : 'assets/img/fallback.png';
   }
   getDescrition(){
-    const description = this.selectedShow && this.selectedShow.show && this.selectedShow.summary
+    const description = this.selectedShow && this.selectedShow.show && this.selectedShow.show.summary;
     return description;
   }
   getGenres(){
