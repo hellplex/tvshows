@@ -3,6 +3,26 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
+export interface ShowImage {
+  medium: string
+}
+
+export interface ShowRating {
+  average: string
+}
+
+export interface Show {
+  id: string,
+  genres: string[],
+  image: ShowImage,
+  name: string,
+  summary: string,
+  rating: ShowRating
+}
+export interface Item {
+  score: number;
+  show: Show;
+}
 @Component({
   selector: 'app-show-detail',
   templateUrl: './show-detail.component.html',
@@ -11,6 +31,8 @@ import { DataService } from '../../services/data.service';
 export class ShowDetailComponent {
   showid = '';
   showItems: any;
+  selected: any;
+  localSelectedShow: any;
   selectedShow: any;
 
   constructor(
@@ -25,9 +47,17 @@ export class ShowDetailComponent {
     this._data.showItems.subscribe(res => this.showItems = res);
     this._data.updateShowItems(this.showItems);
 
-    this.selectedShow = this.showItems.find((item: any) => {
+    this.selected = this.showItems.find((item: any) => {
       return item.show.id === parseInt(this.showid);
     });
+
+    if(this.selected) {
+      localStorage.setItem('localSelectedShow', JSON.stringify(this.selected));
+    }
+
+    this.localSelectedShow = localStorage.getItem('localSelectedShow');
+    this.selectedShow = JSON.parse(this.localSelectedShow); 
+
   }
 
   getTitle() {
