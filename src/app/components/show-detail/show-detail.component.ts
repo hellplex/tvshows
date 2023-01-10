@@ -77,7 +77,7 @@ export class ShowDetailComponent {
   }
 
   sendMeHome() {
-    this._data.updateShowItems([]); // reset the list to not show previous search
+    // this._data.updateShowItems([]); reset the list to not show previous search
     this.router.navigate(['']);
   }
 }
