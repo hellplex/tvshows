@@ -1,28 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { SearchResult } from '../../core/models/search-result.model';
+import { Show } from '../../core/models/show.model';
 import { DataService } from '../../services/data.service';
 
-export interface ShowImage {
-  medium: string
-}
-
-export interface ShowRating {
-  average: string
-}
-
-export interface Show {
-  id: string,
-  genres: string[],
-  image: ShowImage,
-  name: string,
-  summary: string,
-  rating: ShowRating
-}
-export interface Item {
-  score: number;
-  show: Show;
-}
 @Component({
   selector: 'app-show-detail',
   templateUrl: './show-detail.component.html',
@@ -30,10 +12,10 @@ export interface Item {
 })
 export class ShowDetailComponent {
   showid = '';
-  showItems: any;
-  selected: any;
-  localSelectedShow: any;
-  selectedShow: any;
+  showItems!: SearchResult[];
+  selected?: SearchResult;
+  localSelectedShow?: string | null;
+  selectedShow?: SearchResult;
 
   constructor(
     private route: ActivatedRoute,
@@ -56,7 +38,7 @@ export class ShowDetailComponent {
     }
 
     this.localSelectedShow = localStorage.getItem('localSelectedShow');
-    this.selectedShow = JSON.parse(this.localSelectedShow); 
+    this.selectedShow = this.localSelectedShow ? JSON.parse(this.localSelectedShow) : {}; 
 
   }
 
@@ -82,8 +64,8 @@ export class ShowDetailComponent {
   }
 
   getRating(){
-    const rating = this.selectedShow && this.selectedShow.show && this.selectedShow.show.rating && this.selectedShow.show.rating.average
-    return rating ;
+    const rating = this.selectedShow && this.selectedShow.show && this.selectedShow.show.rating && this.selectedShow.show.rating.average;
+    return rating || 0;
   }
 
   getRatingStars(){
