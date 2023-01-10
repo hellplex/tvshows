@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { SearchResult } from '../../core/models/search-result.model';
-import { Show } from '../../core/models/show.model';
 import { DataService } from '../../services/data.service';
 
 @Component({
