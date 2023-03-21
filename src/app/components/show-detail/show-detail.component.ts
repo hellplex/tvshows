@@ -1,11 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { SearchResult } from '../../core/models/search-result.model';
 import { DataService } from '../../services/data.service';
+import { StarRatingComponent } from '../star-rating/star-rating.component';
 
 @Component({
   selector: 'app-show-detail',
+  standalone: true,
+  imports: [CommonModule, StarRatingComponent],
   templateUrl: './show-detail.component.html',
   styleUrls: ['./show-detail.component.sass']
 })

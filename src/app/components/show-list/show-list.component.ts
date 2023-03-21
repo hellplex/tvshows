@@ -1,8 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-show-list',
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './show-list.component.html',
   styleUrls: ['./show-list.component.sass']
 })
